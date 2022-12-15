@@ -28,6 +28,13 @@ def remaining_visuals():
     elif remaining_guesses == 7:
         print(visual_hangman.display_visual_hangman[0])
 
+# display current word
+    print("\n Word: ")
+    for letter in guesses: # Display hidden word visual
+        print(f"{letter} ", end="")
+        print(f" \n {remaining_guesses} left \n")
+
+
 # Create hidden word
 for i in range(len(Word)):
     guesses.append('_')
