@@ -1,2 +1,2 @@
 # Array of words to be used in hangman game
-game_words = [] # Words to be guessed
+game_words = ["test"] # Words to be guessed
