@@ -1,3 +1,5 @@
+import words, visual_hangman
+
 # Initialisation
 game_over = False #initialise game as continuing
 guesses = [] # Array for visual of word being guessed
