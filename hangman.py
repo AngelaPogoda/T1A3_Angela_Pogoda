@@ -1,14 +1,15 @@
 # Imports
-import words, visual_hangman
+import random, words, visual_hangman
 
 # Initialisation
-game_over = False #initialise game as continuing
+game_over = False # Initialise game as continuing
 guesses = [] # Array for visual of word being guessed
-incorrect_guesses = 0 
-remaining_guesses = 7 #update to number of hangman images
-game_words = words.game_words # game words from word file
+remaining_guesses = 7 # Update to number of hangman visuals
+game_words = words.game_words # Game words from word file
 
-# print function
+Word = game_words[random.randint(0, len(game_words)-1)].upper()
+
+# Print function
 def remaining_visuals():
     if remaining_guesses == 0:
         print(visual_hangman.display_visual_hangman[7])
@@ -27,7 +28,11 @@ def remaining_visuals():
     elif remaining_guesses == 7:
         print(visual_hangman.display_visual_hangman[0])
 
-# game
+# Create hidden word
+for i in range(len(Word)):
+    guesses.append('_')
+
+# Game
 while game_over == False:
     remaining_visuals()
 
@@ -36,17 +41,18 @@ while game_over == False:
     if not userInput:
         print("invalid input")
     else:
-        if (): # correct guess
+        if (): # Correct guess
             continue
-        else: # incorrect guess
+        else: # Incorrect guess
+            print("guess is incorrect")
             remaining_guesses -= 1
-            # game over case
+            # Game over case
             if remaining_guesses == 0:
-                game_over = True
+                game_over = True # Exit game
 
 
 
-# end conditions
+# End conditions
     # Lose
 
     # Win
